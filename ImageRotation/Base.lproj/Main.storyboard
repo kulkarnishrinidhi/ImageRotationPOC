@@ -1,26 +1,95 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G18a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageRotation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ZA-UL-7I9" userLabel="ContainerView">
+                                <rect key="frame" x="22" y="198" width="372" height="340"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sexprodial" translatesAutoresizingMaskIntoConstraints="NO" id="ZuX-5w-MUr">
+                                        <rect key="frame" x="0.0" y="20" width="372" height="300"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sexpro_needle" translatesAutoresizingMaskIntoConstraints="NO" id="OwZ-Ei-F4I">
+                                        <rect key="frame" x="0.0" y="15" width="372" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="8ql-4u-Cpw"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.24313725489999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="OwZ-Ei-F4I" firstAttribute="trailing" secondItem="ZuX-5w-MUr" secondAttribute="trailing" id="1Je-LT-6yi"/>
+                                    <constraint firstItem="ZuX-5w-MUr" firstAttribute="centerY" secondItem="1ZA-UL-7I9" secondAttribute="centerY" id="Ga9-OP-LCe"/>
+                                    <constraint firstItem="OwZ-Ei-F4I" firstAttribute="top" secondItem="1ZA-UL-7I9" secondAttribute="top" constant="15" id="HDa-p3-x8B"/>
+                                    <constraint firstAttribute="bottom" secondItem="OwZ-Ei-F4I" secondAttribute="bottom" constant="25" id="JWx-1f-dAp"/>
+                                    <constraint firstItem="OwZ-Ei-F4I" firstAttribute="centerX" secondItem="1ZA-UL-7I9" secondAttribute="centerX" id="iL0-jF-Lep"/>
+                                    <constraint firstItem="OwZ-Ei-F4I" firstAttribute="leading" secondItem="ZuX-5w-MUr" secondAttribute="leading" id="pHF-AV-R2P"/>
+                                    <constraint firstItem="ZuX-5w-MUr" firstAttribute="top" secondItem="1ZA-UL-7I9" secondAttribute="top" constant="20" id="tZ9-pb-GXd"/>
+                                    <constraint firstItem="OwZ-Ei-F4I" firstAttribute="leading" secondItem="1ZA-UL-7I9" secondAttribute="leading" id="vIA-xf-bpe"/>
+                                    <constraint firstAttribute="width" secondItem="1ZA-UL-7I9" secondAttribute="height" multiplier="31:34" id="yZ4-wT-BF5"/>
+                                    <constraint firstAttribute="width" constant="340" id="yp4-pk-oDn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yZ4-wT-BF5"/>
+                                        <exclude reference="yp4-pk-oDn"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZA-P9-6Zb">
+                                <rect key="frame" x="186" y="686" width="45" height="30"/>
+                                <state key="normal" title="Rotate"/>
+                                <connections>
+                                    <action selector="rotateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O5c-Ph-PGo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1ZA-UL-7I9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="89o-8d-pBE"/>
+                            <constraint firstItem="1ZA-UL-7I9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="144" id="AI9-na-dBS"/>
+                            <constraint firstItem="1ZA-UL-7I9" firstAttribute="centerX" secondItem="JZA-P9-6Zb" secondAttribute="centerX" id="J3r-Ei-p9z"/>
+                            <constraint firstAttribute="trailing" secondItem="1ZA-UL-7I9" secondAttribute="trailing" constant="20" id="Std-ZD-zWt"/>
+                            <constraint firstAttribute="bottom" secondItem="JZA-P9-6Zb" secondAttribute="bottom" constant="20" symbolic="YES" id="n1Q-fL-pII"/>
+                            <constraint firstItem="1ZA-UL-7I9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vrJ-1F-t6d"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AI9-na-dBS"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="OwZ-Ei-F4I" id="gsn-rJ-pKo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sexpro_needle" width="400" height="400"/>
+        <image name="sexprodial" width="290" height="290"/>
+    </resources>
 </document>

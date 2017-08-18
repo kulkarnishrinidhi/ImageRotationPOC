@@ -10,16 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    var counter:Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func rotateAction(_ sender: Any) {
+        self.counter = self.counter + 1
+        UIView.animate(withDuration: 2.0, animations: {
+            self.imageView.transform = CGAffineTransform(rotationAngle: (10.0 * CGFloat(self.counter) * CGFloat(Double.pi)) / 180.0)
+        })
     }
-
 
 }
 
